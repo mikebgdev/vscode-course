@@ -33,3 +33,24 @@ También hay un par de extensiones bastante útiles que les recomiendo de entrad
 
 # Wallpapers que uso
 [Wallpapers Developer](https://drive.google.com/drive/folders/1ItU8rbSGJjnh2USOBGwaCo9nYKifPJ6m?usp=sharing)
+
+<!-- repository-quality-20261101 -->
+ ## Comprobaciones y publicación
+
+ La verificación del repositorio está en `ci/verify.sh`. Necesita las dependencias de desarrollo descritas arriba; no utiliza datos ni credenciales de producción.
+
+ ```sh
+ bash ci/verify.sh
+ ```
+
+ El workflow **Quality** comprueba secretos y después ejecuta esas comprobaciones en pushes a la rama principal y en pull requests. El escaneo usa Gitleaks 8.30.1 con descarga verificada por SHA256; examina el historial Git disponible y el directorio actual. No imprime valores de secretos. Para la revisión completa local, usar un clon con historial completo y ejecutar `bash ci/check_secrets.sh`; se puede indicar `GITLEAKS_BIN` con esa versión instalada.
+
+ La existencia del archivo de workflow no acredita que el runner esté disponible ni que la revisión haya pasado. Antes de integrar, comprobar los resultados **Secrets** y **Verify** del mismo SHA. Este workflow no despliega servicios. Conservar el procedimiento de entrega y rollback específico del proyecto.
+
+ La [recomendación de licencia](docs/LICENSING.md) distingue código propio y materiales de terceros. No se ha aplicado una licencia nueva ni cambiado la visibilidad del repositorio.
+
+## Aplicación de ejemplo y ejercicios
+
+La entrada ejecutable es `src/main.ts`, con `src/counter.ts` y los tipos de Vite. Los directorios numerados son ejercicios de edición: conservan fragmentos incompletos, repeticiones y plantillas para practicar el editor; no forman parte de la aplicación Vite. El build comprueba la aplicación, no declara compilables todos esos fragmentos. Instalación: `npm ci`; desarrollo: `npm run dev`; entrega estática: `npm run build`, en `dist/`.
+
+El README referencia el curso de Fernando Herrera/DevTalles. Confirmar la procedencia y los permisos de los ejercicios antes de atribuirse o relicenciar ese material; la recomendación de licencia solo alcanza código propio comprobado.
