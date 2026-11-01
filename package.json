@@ -1,4 +1,5 @@
 {
+  "license": "SEE LICENSE IN docs/LICENSING.md",
   "name": "vscode",
   "private": true,
   "version": "0.0.0",

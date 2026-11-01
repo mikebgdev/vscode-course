@@ -47,10 +47,14 @@ También hay un par de extensiones bastante útiles que les recomiendo de entrad
 
  La existencia del archivo de workflow no acredita que el runner esté disponible ni que la revisión haya pasado. Antes de integrar, comprobar los resultados **Secrets** y **Verify** del mismo SHA. Este workflow no despliega servicios. Conservar el procedimiento de entrega y rollback específico del proyecto.
 
- La [recomendación de licencia](docs/LICENSING.md) distingue código propio y materiales de terceros. No se ha aplicado una licencia nueva ni cambiado la visibilidad del repositorio.
 
 ## Aplicación de ejemplo y ejercicios
 
 La entrada ejecutable es `src/main.ts`, con `src/counter.ts` y los tipos de Vite. Los directorios numerados son ejercicios de edición: conservan fragmentos incompletos, repeticiones y plantillas para practicar el editor; no forman parte de la aplicación Vite. El build comprueba la aplicación, no declara compilables todos esos fragmentos. Instalación: `npm ci`; desarrollo: `npm run dev`; entrega estática: `npm run build`, en `dist/`.
 
 El README referencia el curso de Fernando Herrera/DevTalles. Confirmar la procedencia y los permisos de los ejercicios antes de atribuirse o relicenciar ese material; la recomendación de licencia solo alcanza código propio comprobado.
+
+<!-- license-adopted-20261101 -->
+## Licencia
+
+**MIT**, con el alcance indicado en [docs/LICENSING.md](docs/LICENSING.md). El texto completo está en [LICENSE](LICENSE). La concesión cubre las aportaciones propias; los recursos y componentes de terceros conservan sus licencias y atribuciones.
